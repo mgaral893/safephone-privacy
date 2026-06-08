@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafePhone - Política de Privacidad</title>
-  <meta name="description" content="Política de privacidad de SafePhone, aplicación de alarma antirrobo para Android.">
+  <title>SafePhone Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for SafePhone, an Android anti-theft alarm application.">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
-      line-height: 1.6; color: #222; max-width: 780px; margin: 0 auto;
-      padding: 24px 20px 64px; background: #fafafa;
+      line-height: 1.65; color: #222; max-width: 860px; margin: 0 auto;
+      padding: 24px 20px 72px; background: #fafafa;
     }
-    header { border-bottom: 2px solid #1a73e8; padding-bottom: 16px; margin-bottom: 32px; }
-    h1 { color: #1a73e8; font-size: 28px; margin-bottom: 8px; }
-    h2 { color: #1a73e8; font-size: 20px; margin: 32px 0 12px; padding-top: 16px; border-top: 1px solid #e0e0e0; }
-    h3 { font-size: 16px; margin: 16px 0 8px; }
+    header { border-bottom: 2px solid #1a73e8; padding-bottom: 16px; margin-bottom: 28px; }
+    h1 { color: #1a73e8; font-size: 30px; margin: 0 0 8px; }
+    h2 { color: #1a73e8; font-size: 21px; margin: 34px 0 12px; padding-top: 16px; border-top: 1px solid #e0e0e0; }
+    h3 { font-size: 17px; margin: 18px 0 8px; }
+    p, li { font-size: 15.5px; }
+    ul { padding-left: 24px; }
     .meta { color: #666; font-size: 14px; }
-    p, li { margin-bottom: 10px; font-size: 15px; }
-    ul, ol { padding-left: 24px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
+    .toc { background: #eef4ff; padding: 14px 16px; border-left: 4px solid #1a73e8; border-radius: 4px; margin: 20px 0 28px; }
     .contact { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px; margin: 24px 0; border-radius: 4px; }
     code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 14px; }
     footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #666; font-size: 13px; }
@@ -27,111 +27,166 @@
 </head>
 <body>
   <header>
-    <h1>Política de Privacidad — SafePhone</h1>
-    <p class="meta">Aplicación: SafePhone — Alarma Antirrobo para Android<br>
-    Desarrollador: fionn1989<br>
-    Última actualización: 08 de June de 2026<br>
-    Idioma: Español</p>
+    <h1>SafePhone Privacy Policy</h1>
+    <p class="meta">Application: SafePhone — Anti-Theft Alarm for Android<br>
+    Developer account: mgaral893<br>
+    Last updated: June 08, 2026<br>
+    Languages: English and Spanish</p>
   </header>
 
-  <p>SafePhone ("la aplicación", "el servicio") es una aplicación de seguridad móvil para Android. Esta política describe qué información maneja la aplicación, cómo se almacena y qué derechos tiene el usuario. La aplicación está diseñada para funcionar <strong>de forma totalmente local en el dispositivo</strong> y no enviar datos personales a servidores externos.</p>
-
-  <h2>1. Datos que recoge la aplicación</h2>
-
-  <p>SafePhone no recoge, almacena ni transmite datos personales identificables a ningún servidor externo. Toda la información permanece en el dispositivo del usuario.</p>
-
-  <h3>1.1. Información almacenada localmente</h3>
-  <ul>
-    <li><strong>PIN de seguridad (4 dígitos):</strong> Almacenado únicamente en el dispositivo mediante <code>SharedPreferences</code> privadas. Se guarda en forma de hash y nunca se transmite fuera del dispositivo.</li>
-    <li><strong>Preferencias de configuración:</strong> Estado de los sensores activos (movimiento, cargador, bolsillo/luz, auriculares), temporizadores, tipo de sirena seleccionada. Datos no personales, sólo ajustes locales.</li>
-    <li><strong>Estado de armado:</strong> Indicador de si la alarma está armada o desactivada. Se borra al desinstalar la aplicación.</li>
-  </ul>
-
-  <h3>1.2. Permisos solicitados y su uso</h3>
-  <p>La aplicación solicita los siguientes permisos del sistema Android, todos utilizados exclusivamente para su funcionalidad local de seguridad:</p>
-  <ul>
-    <li><strong>CAMERA:</strong> Únicamente para activar el flash LED en modo estroboscópico durante una alarma. La cámara nunca captura, almacena ni transmite imágenes.</li>
-    <li><strong>WAKE_LOCK (bloqueo parcial de energía):</strong> Para mantener los sensores activos cuando la pantalla está apagada. No se utiliza para mantener la CPU encendida por motivos no relacionados con la seguridad.</li>
-    <li><strong>VIBRATE:</strong> Para emitir patrones de vibración de alerta y pre-aviso.</li>
-    <li><strong>FOREGROUND_SERVICE y FOREGROUND_SERVICE_SPECIAL_USE:</strong> Para ejecutar el servicio de vigilancia en primer plano mientras la alarma está armada. Requerido por Android 8+.</li>
-    <li><strong>POST_NOTIFICATIONS:</strong> Para mostrar la notificación persistente del candado de seguridad (obligatoria en Android 13+).</li>
-    <li><strong>SYSTEM_ALERT_WINDOW (superposición):</strong> Para mostrar la pantalla de desbloqueo PIN por encima de la pantalla de bloqueo cuando se dispara la alarma.</li>
-    <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Para reactivar el servicio tras el reinicio del dispositivo si la alarma estaba armada (opcional).</li>
-    <li><strong>ACCESS_NETWORK_STATE y ACCESS_WIFI_STATE:</strong> Permisos heredados del SDK, no se utilizan en la práctica por SafePhone.</li>
-  </ul>
-
-  <h3>1.3. Datos que NO se recogen</h3>
-  <p>SafePhone <strong>NO</strong> recoge, almacena, vende ni comparte:</p>
-  <ul>
-    <li>Identificadores personales (nombre, email, teléfono, dirección).</li>
-    <li>Ubicación del dispositivo (GPS, red, IP).</li>
-    <li>Contactos, mensajes, llamadas, fotos, archivos del usuario.</li>
-    <li>Datos de navegación ni historial.</li>
-    <li>Información de cuentas externas (Google, redes sociales, etc.).</li>
-  </ul>
-
-  <h2>2. Sensores del dispositivo</h2>
-  <p>La aplicación accede a los siguientes sensores físicos <strong>únicamente mientras la alarma está armada</strong> y para detectar manipulaciones no autorizadas:</p>
-  <ul>
-    <li>Acelerómetro (detección de movimiento).</li>
-    <li>Sensor de proximidad (detección de bolsillo/bolso).</li>
-    <li>Sensor de luz / luxómetro (detección de exposición a luz).</li>
-    <li>Estado de la conexión de auriculares (jack 3.5 mm o USB-C).</li>
-    <li>Estado de la conexión de carga (AC/USB).</li>
-  </ul>
-  <p>Las lecturas de estos sensores se procesan en tiempo real en el dispositivo y <strong>no se registran, almacenan ni transmiten</strong> fuera del mismo.</p>
-
-  <h2>3. Servicios de terceros</h2>
-  <p>SafePhone <strong>no utiliza</strong> servicios externos de:</p>
-  <ul>
-    <li>Analítica (Google Analytics, Firebase Analytics, Mixpanel, etc.).</li>
-    <li>Crash reporting remoto (Crashlytics, Sentry, etc.).</li>
-    <li>Publicidad ni redes publicitarias.</li>
-    <li>Procesamiento en la nube ni sincronización con servidores.</li>
-  </ul>
-  <p>La aplicación no requiere conexión a Internet para funcionar y no realiza ninguna comunicación de red saliente relacionada con datos del usuario.</p>
-
-  <h2>4. Seguridad de la información</h2>
-  <p>Toda la información sensible (PIN) se almacena en el área privada de la aplicación, accesible únicamente para SafePhone. El PIN se guarda de forma ofuscada. Se recomienda al usuario:</p>
-  <ul>
-    <li>No compartir su PIN con terceros.</li>
-    <li>Cambiar el PIN por defecto (<code>1234</code>) en el primer uso.</li>
-    <li>Mantener el sistema operativo Android actualizado.</li>
-    <li>Utilizar las funciones nativas de Android de bloqueo de pantalla como capa adicional.</li>
-  </ul>
-
-  <h2>5. Datos de menores</h2>
-  <p>SafePhone no está dirigida específicamente a menores de edad. La aplicación no recoge conscientemente datos de menores. Si un padre/madre/tutor considera que un menor ha establecido un PIN, puede desinstalar la aplicación y todos los datos locales se eliminarán.</p>
-
-  <h2>6. Derechos del usuario</h2>
-  <p>Dado que SafePhone no almacena datos personales en servidores externos, el usuario puede ejercer en cualquier momento su derecho de acceso, rectificación y supresión simplemente:</p>
-  <ul>
-    <li><strong>Acceso y rectificación:</strong> Cambiando el PIN desde la pantalla "Cambiar PIN" dentro de la app.</li>
-    <li><strong>Supresión total:</strong> Desinstalando la aplicación desde Ajustes → Aplicaciones → SafePhone → Desinstalar. Esto elimina todos los datos locales (PIN, preferencias, configuración).</li>
-    <li><strong>Portabilidad:</strong> No aplica, al no existir datos almacenados fuera del dispositivo.</li>
-  </ul>
-
-  <h2>7. Cambios en esta política</h2>
-  <p>Si se introducen cambios materiales en el tratamiento de datos (por ejemplo, añadir un servicio externo), se actualizará esta política y se notificará al usuario mediante una actualización de la aplicación en Google Play. La fecha de la última actualización se indica al inicio de este documento.</p>
-
-  <h2>8. Base legal del tratamiento</h2>
-  <p>El tratamiento de datos local se basa en la ejecución del contrato de la aplicación (prestación del servicio de seguridad solicitado por el usuario). Al no existir transmisiones a terceros ni tratamientos automatizados con efectos jurídicos, no se aplican otras bases legales del RGPD.</p>
-
-  <h2>9. Contacto</h2>
-  <div class="contact">
-    <p>Si tiene preguntas sobre esta política de privacidad o el tratamiento de sus datos, puede contactar al desarrollador:</p>
-    <p style="margin-top: 12px;">
-      <strong>Desarrollador:</strong> fionn1989<br>
-      <strong>Repositorio del proyecto:</strong> <a href="https://github.com/fionn1989/antitheft_alarm">github.com/fionn1989/antitheft_alarm</a><br>
-      <strong>Email de contacto:</strong> A través de la página del repositorio en GitHub (botón "Issues")
-    </p>
+  <div class="toc">
+    <strong>Languages:</strong><br>
+    <a href="#english">English version</a> · <a href="#spanish">Versión en español</a>
   </div>
 
-  <h2>10. Ley aplicable</h2>
-  <p>Esta política se rige por el Reglamento General de Protección de Datos (RGPD) de la Unión Europea y por la normativa local aplicable en la jurisdicción del usuario.</p>
+  <section id="english">
+    <h2>English version</h2>
+    <p>SafePhone ("the app", "the service") is an Android mobile security application. This Privacy Policy explains what information the app handles, how it is stored, and what choices users have. SafePhone is designed to work <strong>locally on the user’s device</strong> and does not send personal data to external servers.</p>
+
+    <h2>1. Information handled by the app</h2>
+    <p>SafePhone does not collect, sell, share, or transmit personally identifiable information to external servers. Information required for the app’s functionality remains on the user’s device.</p>
+
+    <h3>1.1 Information stored locally</h3>
+    <ul>
+      <li><strong>Security PIN:</strong> The PIN used to arm/disarm the alarm is stored locally in the app’s private storage. It is not transmitted outside the device.</li>
+      <li><strong>App settings:</strong> Selected alarm modes, sensor preferences, timer settings, and alarm sound preferences are stored locally.</li>
+      <li><strong>Armed/disarmed state:</strong> The app may store whether the alarm is currently armed. This information is deleted when the app is uninstalled.</li>
+    </ul>
+
+    <h3>1.2 Permissions requested and why they are used</h3>
+    <ul>
+      <li><strong>Camera:</strong> Used only to activate the device flashlight/strobe during an alarm. The app does not take, store, or transmit photos or videos.</li>
+      <li><strong>Wake lock:</strong> Used to keep monitoring active while the screen is off, when the alarm is armed.</li>
+      <li><strong>Vibration:</strong> Used for alarm vibration and warning feedback.</li>
+      <li><strong>Foreground service:</strong> Required by Android to keep the anti-theft monitoring service active in the background while the alarm is armed.</li>
+      <li><strong>Notifications:</strong> Used to display the persistent foreground service notification required by Android.</li>
+      <li><strong>Display over other apps:</strong> Used to show the PIN unlock screen when the alarm is triggered.</li>
+      <li><strong>Boot completed:</strong> May be used to restore monitoring after device restart if supported by the app configuration.</li>
+      <li><strong>Network state / Wi‑Fi state:</strong> These permissions may be present due to the Android project configuration but SafePhone does not use them to collect or transmit user data.</li>
+    </ul>
+
+    <h3>1.3 Information not collected</h3>
+    <p>SafePhone does <strong>not</strong> collect or share:</p>
+    <ul>
+      <li>Name, email address, phone number, or postal address.</li>
+      <li>Location data.</li>
+      <li>Contacts, SMS, call logs, photos, files, or browsing history.</li>
+      <li>Advertising identifiers or analytics identifiers.</li>
+      <li>Account credentials or third-party login data.</li>
+    </ul>
+
+    <h2>2. Device sensors</h2>
+    <p>SafePhone may access device sensors only to detect unauthorized movement or tampering while the alarm is armed. These sensors may include:</p>
+    <ul>
+      <li>Accelerometer, for movement detection.</li>
+      <li>Proximity sensor, for pocket/bag detection.</li>
+      <li>Light sensor, for sudden exposure to light.</li>
+      <li>Headphone connection status.</li>
+      <li>Charging connection status.</li>
+    </ul>
+    <p>Sensor readings are processed locally in real time and are not stored, transmitted, sold, or shared.</p>
+
+    <h2>3. Third-party services</h2>
+    <p>SafePhone does not use third-party analytics, crash reporting, advertising networks, cloud processing, or remote synchronization services. The app does not require an internet connection for its core functionality.</p>
+
+    <h2>4. Data sharing</h2>
+    <p>SafePhone does not share user data with third parties. The app does not sell user data and does not transfer personal data to external servers.</p>
+
+    <h2>5. Data deletion</h2>
+    <p>Users can delete all local app data by uninstalling SafePhone from the Android device. This removes the locally stored PIN and app preferences.</p>
+
+    <h2>6. Children’s privacy</h2>
+    <p>SafePhone is not specifically directed to children. The app does not knowingly collect personal information from children.</p>
+
+    <h2>7. Security</h2>
+    <p>Information used by SafePhone is stored in the app’s private local storage area on the user’s device. Users should change the default PIN, keep their Android device updated, and use Android’s built-in lock screen protection.</p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>This Privacy Policy may be updated if the app’s data practices change. The latest version will be available at this URL, with the last updated date shown at the top of the page.</p>
+
+    <h2>9. Contact</h2>
+    <div class="contact">
+      <p>For questions about this Privacy Policy, contact the developer through the project’s public GitHub profile or repository issue tracker when available.</p>
+      <p><strong>Developer account:</strong> mgaral893<br>
+      <strong>Privacy Policy URL:</strong> <a href="https://mgaral893.github.io/safephone-privacy/">https://mgaral893.github.io/safephone-privacy/</a></p>
+    </div>
+  </section>
+
+  <section id="spanish">
+    <h2>Versión en español</h2>
+    <p>SafePhone ("la aplicación", "el servicio") es una aplicación de seguridad móvil para Android. Esta política describe qué información maneja la aplicación, cómo se almacena y qué derechos tiene el usuario. La aplicación está diseñada para funcionar <strong>de forma local en el dispositivo</strong> y no enviar datos personales a servidores externos.</p>
+
+    <h2>1. Información que maneja la aplicación</h2>
+    <p>SafePhone no recoge, vende, comparte ni transmite información personal identificable a servidores externos. La información necesaria para el funcionamiento de la app permanece en el dispositivo del usuario.</p>
+
+    <h3>1.1 Información almacenada localmente</h3>
+    <ul>
+      <li><strong>PIN de seguridad:</strong> El PIN usado para armar/desarmar la alarma se almacena localmente en el área privada de la aplicación. No se transmite fuera del dispositivo.</li>
+      <li><strong>Preferencias de configuración:</strong> Modos de alarma seleccionados, sensores activos, temporizadores y preferencias de sonido se almacenan localmente.</li>
+      <li><strong>Estado de armado:</strong> La app puede guardar si la alarma está armada o desactivada. Esta información se elimina al desinstalar la aplicación.</li>
+    </ul>
+
+    <h3>1.2 Permisos solicitados y uso</h3>
+    <ul>
+      <li><strong>Cámara:</strong> Se usa únicamente para activar el flash/luz estroboscópica durante una alarma. La app no captura, almacena ni transmite fotos o vídeos.</li>
+      <li><strong>Wake lock:</strong> Se usa para mantener la monitorización activa con la pantalla apagada cuando la alarma está armada.</li>
+      <li><strong>Vibración:</strong> Se usa para vibración de alarma y avisos.</li>
+      <li><strong>Servicio en primer plano:</strong> Requerido por Android para mantener activo el servicio de vigilancia mientras la alarma está armada.</li>
+      <li><strong>Notificaciones:</strong> Se usan para mostrar la notificación persistente obligatoria del servicio en primer plano.</li>
+      <li><strong>Mostrar sobre otras apps:</strong> Se usa para mostrar la pantalla de desbloqueo con PIN cuando salta la alarma.</li>
+      <li><strong>Arranque completado:</strong> Puede usarse para restaurar la monitorización tras reiniciar el dispositivo si la configuración de la app lo permite.</li>
+      <li><strong>Estado de red / Wi‑Fi:</strong> Estos permisos pueden estar presentes por la configuración del proyecto Android, pero SafePhone no los usa para recoger ni transmitir datos del usuario.</li>
+    </ul>
+
+    <h3>1.3 Información que NO se recoge</h3>
+    <p>SafePhone <strong>no</strong> recoge ni comparte:</p>
+    <ul>
+      <li>Nombre, email, teléfono o dirección postal.</li>
+      <li>Ubicación.</li>
+      <li>Contactos, SMS, llamadas, fotos, archivos o historial de navegación.</li>
+      <li>Identificadores publicitarios o de analítica.</li>
+      <li>Credenciales de cuentas externas.</li>
+    </ul>
+
+    <h2>2. Sensores del dispositivo</h2>
+    <p>SafePhone puede acceder a sensores físicos únicamente para detectar movimiento o manipulación no autorizada mientras la alarma está armada. Estos sensores pueden incluir:</p>
+    <ul>
+      <li>Acelerómetro, para detección de movimiento.</li>
+      <li>Sensor de proximidad, para detección de bolsillo/bolso.</li>
+      <li>Sensor de luz, para cambios bruscos de iluminación.</li>
+      <li>Estado de conexión de auriculares.</li>
+      <li>Estado de conexión de carga.</li>
+    </ul>
+    <p>Las lecturas de sensores se procesan localmente en tiempo real y no se almacenan, transmiten, venden ni comparten.</p>
+
+    <h2>3. Servicios de terceros</h2>
+    <p>SafePhone no usa analítica de terceros, crash reporting remoto, redes publicitarias, procesamiento en la nube ni sincronización remota. La app no necesita conexión a internet para su funcionalidad principal.</p>
+
+    <h2>4. Compartición de datos</h2>
+    <p>SafePhone no comparte datos del usuario con terceros. La app no vende datos del usuario ni transfiere datos personales a servidores externos.</p>
+
+    <h2>5. Eliminación de datos</h2>
+    <p>El usuario puede eliminar todos los datos locales desinstalando SafePhone del dispositivo Android. Esto elimina el PIN y las preferencias locales de la aplicación.</p>
+
+    <h2>6. Privacidad de menores</h2>
+    <p>SafePhone no está dirigida específicamente a menores. La aplicación no recoge conscientemente información personal de menores.</p>
+
+    <h2>7. Seguridad</h2>
+    <p>La información usada por SafePhone se almacena en el área privada local de la aplicación dentro del dispositivo. Se recomienda cambiar el PIN por defecto, mantener Android actualizado y usar el bloqueo de pantalla nativo del sistema.</p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p>Esta política puede actualizarse si cambian las prácticas de datos de la aplicación. La versión más reciente estará disponible en esta URL, con la fecha de última actualización indicada al inicio.</p>
+
+    <h2>9. Contacto</h2>
+    <div class="contact">
+      <p>Para preguntas sobre esta política de privacidad, contacte con el desarrollador a través del perfil público de GitHub o del sistema de issues del repositorio cuando esté disponible.</p>
+      <p><strong>Cuenta de desarrollador:</strong> mgaral893<br>
+      <strong>URL de política de privacidad:</strong> <a href="https://mgaral893.github.io/safephone-privacy/">https://mgaral893.github.io/safephone-privacy/</a></p>
+    </div>
+  </section>
 
   <footer>
-    <p>Documento generado para SafePhone v1.0.1. Esta política es vinculante desde la fecha de última actualización indicada al inicio del documento.</p>
+    <p>SafePhone Privacy Policy. Last updated: June 08, 2026. / Política de privacidad de SafePhone. Última actualización: 08/06/2026.</p>
   </footer>
 </body>
 </html>
